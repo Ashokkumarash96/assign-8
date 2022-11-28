@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primary color & Secondary color with Google font</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- custom css -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap");
+      body {
+        margin-top: 2rem;
+        font-size: 2rem;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: radial-gradient(#4d477e, #336479, #2b573e);
+      }
+      .contentbox {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+        gap: 1rem;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        margin-left: 1rem;
+        border-radius: 3px;
+      }
+      #display-text {
+        width: 20rem;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contentbox">
+        <input class="text" id="text" placeholder="Type something" />
+        <button id="show">Submit</button>
+        <div class="div">
+          <button class="Primary" id="Primary">Primary</button>
+          <button class="Secondary" id="Secondary">Secondary</button>
+        </div>
+        <div>
+          <button id="font1">Font 1</button>
+          <button id="font2">Font 2</button>
+        </div>
+        <div id="display-text"></div>
+      </div>
+    </div>
+    <!-- custom script -->
+    <script>
+      //Variable
+      let word = document.getElementById("text");
+      let primary = document.getElementById("Primary");
+      let secondary = document.getElementById("Secondary");
+      let font1 = document.getElementById("font1");
+      let font2 = document.getElementById("font2");
+      let output = document.getElementById("show");
+      let display = document.getElementById("display-text");
+
+      //Display Text
+      output.addEventListener("click", showOutput);
+      function showOutput() {
+        display.innerText = word.value;
+      }
+
+      //Primary size color
+      primary.addEventListener("click", prim);
+      function prim() {
+        display.style.fontSize = "32px";
+        display.style.color = "#4d477e";
+      }
+
+      //Secondary size color
+      secondary.addEventListener("click", sec);
+      function sec() {
+        display.style.fontSize = "24px";
+        display.style.color = "#336479";
+      }
+      // Font 'Nerko One', cursive
+      font1.addEventListener("click", ner);
+      function ner() {
+        (display.style.fontFamily = "'Nerko One', cursive"), sans - serif;
+      }
+
+      //Font 'BhuTuka Expanded One', cursive
+      font2.addEventListener("click", bhu);
+      function bhu() {
+        (display.style.fontFamily = "'BhuTuka Expanded One', cursive"), cursive;
+      }
+    </script>
+  </body>
+</html>
